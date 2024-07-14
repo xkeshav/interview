@@ -1,45 +1,25 @@
 import React from 'react';
 
-function FileData() {
-    return (
-      <>
-        <li>
-        <button
-        >
-          public<span>[+]</span>
-        </button>
-      </li>
-      <li>
-          <button
-          >
-            node_modules<span>[+]</span>
-          </button>
-        </li>
-      <li>
-        <button
-        >
-          src<span>[+]</span>
-        </button>
-      </li>
-      <li>
-        <button
-        >
-          Git<span>[+]</span>
-        </button>
-      </li>
-      </>
-    );
-  }
+function FileData({data}) {
+  return (
+    <>
+    {data.map(file => <li><button>{file.name}<span>[+]</span></button></li>)}
+    </>
+  );
+}
 
-function FileList() {
-    return (
-        <ul>
-        <FileData />
+function FileList({list}) {
+  console.log({list});
+  return {
+    {list.map(l => (
+    <ul>
+      <FileData data={l}/>
       <li>
         <button>+</button>
-    </li>
-    </ul>
-  )
+      </li>
+    </ul>))
+    }
+  }
 }
 
 export default FileList;
