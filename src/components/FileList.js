@@ -1,25 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function FileData({data}) {
+import "../App.css"
+
+function FileData({ data }) {
+
+  const [fileData, setFileData] = useState(data);
+
+  const addMore = (file) => {
+    console.log(file)
+  }
+  const clickOnFile = (file) => {
+    // setFileData()
+  };
+
   return (
     <>
-    {data.map(file => <li><button>{file.name}<span>[+]</span></button></li>)}
+      {fileData.map(file => (
+        <>
+        <li onDoubleClick={()=>clickOnFile(file)}><button>{file.name}<span onClick={()=>addMore(file)}>[+]</span></button></li>
+        {file.files && file.files.length > 0 && <FileList list={file.files}/>}
+        </>
+      ))
+      }
     </>
   );
 }
 
-function FileList({list}) {
-  console.log({list});
-  return {
-    {list.map(l => (
-    <ul>
-      <FileData data={l}/>
-      <li>
-        <button>+</button>
-      </li>
-    </ul>))
-    }
-  }
+function FileList({ list }) {
+  console.log({ list })
+  return (
+        <ul>
+          <FileData data={list} />
+          <li>
+            <button>+</button>
+          </li>
+        </ul>
+    )
 }
 
 export default FileList;

@@ -6,7 +6,7 @@ function File() {
   return (
     <div className='layout-row justify-content-between'>
         <ul data-testid="files">
-           <FileList list={initialData} />
+          <FileList list={initialData} />
         </ul>
         <input data-testid="input-box" className='mt-15 mr-35 w-15' style={{borderColor: "black"}} type="text" placeholder='Enter an item' value="Filename" />
     </div>
