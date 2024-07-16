@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Poll } from '../../types/Poll';
+import React, { useEffect, useState } from 'react';
+import { Poll, PollOption } from '../../types/Poll';
 
 interface ResultsProps {
   poll: Poll;
@@ -15,6 +15,15 @@ const Results: React.FC<ResultsProps> = ({ poll, viewWinner, setViewWinner, tota
     setResultNote('clicked ');
     console.log({poll});
   }
+
+  useEffect(()=>{
+    poll.options.sort( (a,b) => {
+      if( a.votes > b.votes)  return -1;
+      if(a.votes < b.votes) return 1;
+      return 0
+    });
+    //  console.log({higher, lower});
+  }, [poll])
 
   const [resultNote, setResultNote] = useState('');
 
