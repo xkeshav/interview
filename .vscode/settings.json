@@ -1,0 +1,7 @@
+{
+    "workbench.editor.customLabels.patterns": {
+        "src/components/**/index.ts": "${dirname} ",
+        "src/components/**/index.tsx": "${dirname} "
+    },
+    "workbench.editor.labelFormat": "short"
+}
