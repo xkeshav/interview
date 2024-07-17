@@ -1,19 +1,19 @@
 {
-  "name": "@xkeshav/<project>",
+  "name": "@xkeshav/interview",
   "version": "0.0.1",
   "private": false,
   "displayName": "Project Name",
-  "description": "This is a <project> repository.",
+  "description": "This is a interview repository.",
   "publisher": "@xkeshav",
-  "homepage": "https://github.com/xkeshav/<project>/blob/main/README.md",
-  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/xkeshav/interview/blob/main/README.md",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xkeshav/<project>/issues",
+    "url": "https://github.com/xkeshav/interview/issues",
     "email": "xkeshav@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xkeshav/<project>.git"
+    "url": "https://github.com/xkeshav/interview.git"
   },
   "keywords": [
     "xkeshav", 
@@ -28,7 +28,7 @@
   "contributors": [],
   "main": "src/index.js",
   "scripts": {
-    "start": "tsc"
+    "start": "node src/index.js"
   },
   "dependencies": { 
     "@xkeshav/day": "latest"

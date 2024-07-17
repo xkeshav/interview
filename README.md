@@ -1,20 +1,9 @@
-# Template Repository
+# Interview Repository
 
-This is project repository
+This is a repository where I list all interview question which being asked in my journey.
 
-## How to start
+there are separate branch for a live coding with full setup question ; while common interview question will be in **main** branch
 
-- Navigate to the repo from terminal
-- Install dependencies using below command
+Hope it will helps you.
 
-```sh
-> npm install
-```
-
-- After successful completion of above command, run
-
-```sh
-> npm run start
-```
-
-This command will output on which address, project is running; open that in browser
+Enjoy.
