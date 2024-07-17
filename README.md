@@ -57,20 +57,27 @@ Note:
 - Default Port: 8000
 
 **Read Only Files**
+
 - `src/App.test.tsx`
 - `src/data/Poll.ts`
 
 
 **Commands**
-- run: 
+
+- run:
+
 ```bash
 npm start
 ```
-- install: 
+
+- install
+
 ```bash
 npm install
 ```
-- test: 
+
+- test
+
 ```bash
 npm test
 ```

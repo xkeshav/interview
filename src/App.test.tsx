@@ -5,6 +5,7 @@ import { pollData } from "./types/Poll";
 
 describe("typescript-poll-manager", () => {
   beforeEach(() => {
+    // eslint-disable-next-line testing-library/no-render-in-setup
     render(<App />)
   });
   test("renders the app with initial state", () => {

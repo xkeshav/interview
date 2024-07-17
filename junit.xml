@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="9" failures="3" errors="0" time="1.021">
+  <testsuite name="typescript-poll-manager" errors="0" failures="3" skipped="0" timestamp="2024-07-17T10:07:15" time="0.694" tests="9">
+    <testcase classname="typescript-poll-manager renders the app with initial state" name="typescript-poll-manager renders the app with initial state" time="0.028">
+    </testcase>
+    <testcase classname="typescript-poll-manager renders correct choice 1" name="typescript-poll-manager renders correct choice 1" time="0.006">
+    </testcase>
+    <testcase classname="typescript-poll-manager renders correct choice 2" name="typescript-poll-manager renders correct choice 2" time="0.025">
+    </testcase>
+    <testcase classname="typescript-poll-manager shows correct vote count after voting" name="typescript-poll-manager shows correct vote count after voting" time="0.041">
+    </testcase>
+    <testcase classname="typescript-poll-manager shows &quot;It&apos;s a tie&quot; when both options have equal votes" name="typescript-poll-manager shows &quot;It&apos;s a tie&quot; when both options have equal votes" time="0.013">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+Expected: &quot;It&apos;s a tie&quot;
+Received: &quot;Superman is leading by 1 vote(s)&quot;
+    at Object.toEqual (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/src/App.test.tsx:47:36)
+    at Promise.then.completed (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:66:9)
+    at _runTestsForDescribeBlock (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:60:9)
+    at run (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:25:3)
+    at runAndTransformResultsToJestFormat (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+    at jestAdapter (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+    at runTestInternal (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/runTest.js:475:34)
+    at TestRunner.runTests (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/index.js:101:12)
+    at TestScheduler.scheduleTests (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/TestScheduler.js:333:13)
+    at runJest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/runJest.js:404:19)
+    at _run10000 (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/cli/index.js:320:7)
+    at runCLI (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/cli/index.js:173:3)
+    at Object.run (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-cli/build/cli/index.js:155:37)</failure>
+    </testcase>
+    <testcase classname="typescript-poll-manager &quot;View Winner&quot; button is disabled when no votes have been cast" name="typescript-poll-manager &quot;View Winner&quot; button is disabled when no votes have been cast" time="0.004">
+    </testcase>
+    <testcase classname="typescript-poll-manager &quot;View Winner&quot; button is disabled when winner is declared" name="typescript-poll-manager &quot;View Winner&quot; button is disabled when winner is declared" time="0.011">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+Expected: &quot;Superman is leading by 1 vote(s)&quot;
+Received: &quot;Superman is leading by 2 vote(s)&quot;
+    at Object.toEqual (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/src/App.test.tsx:61:36)
+    at Promise.then.completed (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:66:9)
+    at _runTestsForDescribeBlock (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:60:9)
+    at run (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:25:3)
+    at runAndTransformResultsToJestFormat (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+    at jestAdapter (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+    at runTestInternal (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/runTest.js:475:34)
+    at TestRunner.runTests (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/index.js:101:12)
+    at TestScheduler.scheduleTests (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/TestScheduler.js:333:13)
+    at runJest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/runJest.js:404:19)
+    at _run10000 (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/cli/index.js:320:7)
+    at runCLI (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/cli/index.js:173:3)
+    at Object.run (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-cli/build/cli/index.js:155:37)</failure>
+    </testcase>
+    <testcase classname="typescript-poll-manager vote buttons are disabled when winner is declared" name="typescript-poll-manager vote buttons are disabled when winner is declared" time="0.01">
+    </testcase>
+    <testcase classname="typescript-poll-manager shows the winner when &quot;View Winner&quot; is clicked" name="typescript-poll-manager shows the winner when &quot;View Winner&quot; is clicked" time="0.021">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+Expected: &quot;Superman won by 2 vote(s)&quot;
+Received: &quot;Superman won by 5 vote(s)&quot;
+    at Object.toEqual (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/src/App.test.tsx:96:36)
+    at Promise.then.completed (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:66:9)
+    at _runTestsForDescribeBlock (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:60:9)
+    at run (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/run.js:25:3)
+    at runAndTransformResultsToJestFormat (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+    at jestAdapter (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+    at runTestInternal (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/runTest.js:475:34)
+    at TestRunner.runTests (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-runner/build/index.js:101:12)
+    at TestScheduler.scheduleTests (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/TestScheduler.js:333:13)
+    at runJest (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/runJest.js:404:19)
+    at _run10000 (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/cli/index.js:320:7)
+    at runCLI (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/@jest/core/build/cli/index.js:173:3)
+    at Object.run (/home/recursive/dev/157f13c1-48cb-461f-819e-c495f7296eca/node_modules/react-scripts/node_modules/jest-cli/build/cli/index.js:155:37)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PollOption } from '../../types/Poll';
 
 interface VoteProps {
@@ -8,11 +8,6 @@ interface VoteProps {
 }
 
 const Vote: React.FC<VoteProps> = ({ options, onVote, viewWinner }) => {
-
-
-  // const handleViewWinner = (e: any) => {
-
-  // }
 
   const handleOnVote = (v: PollOption) => {
     console.log('click handle vote')
@@ -24,7 +19,7 @@ const Vote: React.FC<VoteProps> = ({ options, onVote, viewWinner }) => {
       {options.map((v) => (
         <div key={v.id} data-testid={`option-${v.id}`} className="card mr-10 ml-10 w-100">
           <section className="layout-row align-items-center justify-content-center mr-10 ml-10 pr-10 pl-10">
-            <h3 data-testid={`choice-${v.id}}`}>{v.text}</h3>
+            <h3 data-testid={`choice-${v.id}`}>{v.text}</h3>
           </section>
           <section className="layout-row align-items-center justify-content-center mr-10 ml-10 mb-10 pr-10 pl-10">
             <button onClick={()=>handleOnVote(v)} disabled={viewWinner} data-testid={`vote-button-${v.id}`}>
