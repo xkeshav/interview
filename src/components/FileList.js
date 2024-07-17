@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import "../App.css"
+import "../App.css";
 
 function FileData({ data }) {
 
@@ -9,17 +9,18 @@ function FileData({ data }) {
   const addMore = (file) => {
     console.log(file)
   }
-  const clickOnFile = (file) => {
-    // setFileData()
+  const onDoubleClick = (file) => {
+    console.log('on Double Click', {file});
+    // Object.assign(file, {files: [], isOpen: true} );
   };
 
   return (
     <>
-      {fileData.map(file => (
-        <>
-        <li onDoubleClick={()=>clickOnFile(file)}><button>{file.name}<span onClick={()=>addMore(file)}>[+]</span></button></li>
-        {file.files && file.files.length > 0 && <FileList list={file.files}/>}
-        </>
+      {fileData.map((file,i) => (
+        <li onDoubleClick={()=> onDoubleClick(file)} key={i}>
+          <button>{file.name}{file.files === undefined && <span onClick={()=>addMore(file)}>[+]</span> }</button>
+          {file.files && file.files.length > 0 && <FileList list={file.files}/>}
+        </li>
       ))
       }
     </>
@@ -27,12 +28,19 @@ function FileData({ data }) {
 }
 
 function FileList({ list }) {
-  console.log({ list })
+  console.log({ list });
+  const [files, setFiles ] = useState(list);
+  const handleBtnClick = () => {
+    console.log({files});
+    setFiles(old=> [...old, [{name: 'New File'}]]);
+    console.log({files});
+
+  }
   return (
         <ul>
-          <FileData data={list} />
+          <FileData data={files} />
           <li>
-            <button>+</button>
+            <button onClick={handleBtnClick}>+</button>
           </li>
         </ul>
     )

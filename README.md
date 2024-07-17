@@ -6,27 +6,12 @@
 - Node Version: 18(LTS)
 - Default Port: 8000
 
-## [Change]: Project Specifications 
+## [Change]: Project Specifications
 
-```text
-Note: Add your project specific Read only files below.
-```
+## What to do
 
-**Read Only Files**
-- `src/App.test.js`
+Create a UI using a file data and things need to implement
 
-
-**Commands**
-- run: 
-```bash
-npm start
-```
-- install: 
-```bash
-npm install
-```
-- test: 
-```bash
-npm test
-```
+- on click of + under a folder ; it will create new fil on same folder
+- on click of [+] sign near a file it will turn into folder
 
