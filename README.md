@@ -2,7 +2,13 @@
 
 This question was asked by a company and was conducted by hackerRank and has to complete using React and TypeScript
 
+
+## example 
 ![demo][demo]
+
+## demo link
+
+[working demo link][work]
 
 ## Statement
 
@@ -70,11 +76,12 @@ where their respective functionalities will be implemented.
   - If no votes have been cast, the button should be disabled.
   - Clicking the "View Winner" button should:
     - If the same number of votes have been cast for both options, Display the result text   
-      _"It's a tie"_, .
+      _It's a tie_
     - If one option has more votes than the other then display the result text:  
       _{LEADER} won by {VOTE_DIFFERENCE} vote(s)_
     - Disable the "View Winner" button
     - Disable the "Vote" button for each option
+    - Show Total Votes below Button
 
 ### _PollManager_
 
@@ -107,14 +114,13 @@ The following _data-testid_ attributes are required in the components for the te
 
 - React Version: 18.2.0
 - Node Version: 14(LTS)
-- Default Port: 8000
 
 All other files are ReadOnly
 
 ## How to Start
 
 ```bash
-> - npm install
+> npm install
 > npm run start
 ```
 
@@ -126,4 +132,5 @@ npm run test
 
 <!-- References -->
 
-[demo]: https://hrcdn.net/s3_pub/istreet-assets/ZGfwyhx572_EkNCGzMRkbA/poll-manager.gif
+[demo]: https://hrcdn.net/s3_pub/istreet-assets/ZGfwyhx572_EkNCGzMRkbA/poll-manager.gif  
+[work]: https://mh3xdg-8000.csb.app
