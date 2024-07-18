@@ -1,3 +1,12 @@
+/* following :root block added by css color collector */
+:root {
+	--post__bg--1: #f1f1f1;
+	--post__bg--2: white;
+	--post__border--3: #ddd;
+	--post__box__shadow--4: rgba(0, 0, 0, 0.1);
+	--post__txt--5: #555;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -12,7 +21,7 @@
 .post-list {
   height: 80vh;
   width: 50vh;
-  background-color: #f1f1f1;
+  background-color: var(--post__bg--1);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -22,10 +31,10 @@
 }
 
 .post {
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--post__bg--2);
+  border: 1px solid var(--post__border--3);
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--post__box__shadow--4);
   margin-bottom: 20px;
   padding: 20px;
   width: 300px;
@@ -45,7 +54,7 @@
   display: flex;
   justify-content: flex-end;
   font-size: 0.875em;
-  color: #555;
+  color: var(--post__txt--5);
 }
 
 .post footer span {

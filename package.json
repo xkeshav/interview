@@ -1,13 +1,16 @@
 {
-  "name": "speechify-live-coding",
+  "name": "infinite-scroll",
   "version": "1.0.0",
-  "description": "Live Coding Web",
+  "description": "Live Coding  for Speechify interview",
   "keywords": [
     "typescript",
     "react",
     "starter"
   ],
+  "author": {"name": "Keshav Mohta", "email": "xkeshav@gmail.com"},
+  "homepage": "checking xkeshav@gmail.com",
   "main": "src/index.tsx",
+  "contributors": [ {"name": "Keshav Mohta"}, {"name": "Aman Kumar Jagdev"}],
   "dependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1"
