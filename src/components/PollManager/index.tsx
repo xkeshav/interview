@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Vote from '../Vote';
+import { Poll, pollData, PollOption } from '../../types/Poll';
 import Results from '../Results';
-import { pollData, PollOption } from '../../types/Poll';
+import Vote from '../Vote';
 
 const PollManager: React.FC = () => {
 
-  const { question, options } = pollData;
-  const [pollOptions, setPollOptions] = useState<PollOption[]>(options);
+  //const { question, options } = pollData;
+  const [pollList, setPollList] = useState<Poll>(pollData);
   const [totalVote, setTotalVote] = useState(0);
   const [showWinner, setShowWinner] = useState(false);
 
@@ -17,15 +17,15 @@ const PollManager: React.FC = () => {
   const calculateVote = (data:PollOption[]): number => data.reduce((p: number, n) => p += n.votes, 0);
 
   const handleVote = (id: number) => {
-    setPollOptions(pollOptions.map((p) => p.id === id ? Object.assign(p, { votes: p.votes + 1 }) : p));
-    setTotalVote(calculateVote(pollOptions))
+    setPollList(prev => ({...prev, options: prev.options.map((p:PollOption) => p.id === id ? Object.assign(p, { votes: p.votes + 1 }) : p)}));
+    setTotalVote(calculateVote(pollList.options));
   };
 
   return (
     <div className="layout-column align-items-center justify-content-start poll-manager" data-testid="poll-manager">
-      <h2>{question}</h2>
-      <Vote options={pollOptions} onVote={handleVote} viewWinner={showWinner} />
-      <Results poll={pollOptions} viewWinner={showWinner} setViewWinner={handleShowWinner} totalVotes={totalVote} />
+      <h2>{pollList.question}</h2>
+      <Vote options={pollList.options} onVote={handleVote} viewWinner={showWinner} />
+      <Results poll={pollList} viewWinner={showWinner} setViewWinner={handleShowWinner} totalVotes={totalVote} />
     </div>
   );
 };

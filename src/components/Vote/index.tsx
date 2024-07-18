@@ -10,7 +10,6 @@ interface VoteProps {
 const Vote: React.FC<VoteProps> = ({ options, onVote, viewWinner }) => {
 
   const handleOnVote = (v: PollOption) => {
-    console.log('click handle vote')
     onVote(v.id);
   }
 

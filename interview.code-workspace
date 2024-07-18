@@ -19,7 +19,12 @@
 			"titleBar.inactiveBackground": "#8e451299",
 			"titleBar.inactiveForeground": "#e7e7e799"
 		},
-		"peacock.color": "#8e4512"
+		"peacock.color": "#8e4512",
+		"workbench.editor.customLabels.patterns": {
+			"**/src/components/**/index.tsx": "${dirname}",
+		},
+		"workbench.editor.labelFormat": "short",
+		"files.autoSave": "afterDelay"
 	},
 	"folders": [
 		{

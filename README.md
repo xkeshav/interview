@@ -2,8 +2,8 @@
 
 This question was asked by a company and was conducted by hackerRank and has to complete using React and TypeScript
 
+## example
 
-## example 
 ![demo][demo]
 
 ## demo link
@@ -71,11 +71,10 @@ where their respective functionalities will be implemented.
 
       _{LEADER} is leading by {VOTE_DIFFERENCE} vote(s)._
 
-
 - **View Winner** button:
   - If no votes have been cast, the button should be disabled.
   - Clicking the "View Winner" button should:
-    - If the same number of votes have been cast for both options, Display the result text   
+    - If the same number of votes have been cast for both options, Display the result text
       _It's a tie_
     - If one option has more votes than the other then display the result text:  
       _{LEADER} won by {VOTE_DIFFERENCE} vote(s)_

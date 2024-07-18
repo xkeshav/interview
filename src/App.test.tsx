@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
 import { pollData } from "./types/Poll";
 
@@ -8,6 +8,7 @@ describe("typescript-poll-manager", () => {
     // eslint-disable-next-line testing-library/no-render-in-setup
     render(<App />)
   });
+  afterEach(cleanup);
   test("renders the app with initial state", () => {
     const questionElement = screen.getByText(pollData.question);
     expect(questionElement).toBeInTheDocument();
