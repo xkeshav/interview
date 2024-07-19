@@ -1,10 +1,10 @@
 /* following :root block added by css color collector */
 :root {
-	--post__bg--1: #f1f1f1;
-	--post__bg--2: white;
-	--post__border--3: #ddd;
-	--post__box__shadow--4: rgba(0, 0, 0, 0.1);
-	--post__txt--5: #555;
+  --post__bg--1: #f1f1f1;
+  --post__bg--2: white;
+  --post__border--3: #ddd;
+  --post__box__shadow--4: rgba(0, 0, 0, 0.1);
+  --post__txt--5: #555;
 }
 
 .App {
@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   padding: 16px;
+  scroll-timeline: --squareTimeline y;
 }
 
 .post-list {
@@ -30,6 +31,8 @@
   overflow-x: hidden;
 }
 
+
+
 .post {
   background: var(--post__bg--2);
   border: 1px solid var(--post__border--3);
@@ -38,25 +41,73 @@
   margin-bottom: 20px;
   padding: 20px;
   width: 300px;
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.875em;
+    color: var(--post__txt--5);
+
+    span {
+      font-style: italic;
+    }
+  }
 }
 
-.post h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+
+@supports (animation-timeline: scroll()) {
+    .scroll {
+      animation: up linear both;
+      /* animation-timeline: scroll(root block); */
+      animation-timeline: view();
+      /* animation-range: contain; */
+      animation-range: 25vh 75vh;
+      /* animation-play-state: paused; */
+      /* animation-delay: calc(var(--scroll) * -1s); */
+    }
+    .scroll-y{
+      /* animation: fancy-in linear both; */
+      /* animation-timeline: view(x); */
+      /* animation-timeline: scroll(y); */
+    }
 }
 
-.post p {
-  font-size: 1em;
-  margin-bottom: 15px;
+@keyframes up {
+  from {
+    background-color: green;
+    font-size: large;
+  }
+
+  to {
+    background-color: black;
+    color: white;
+    font-size: small;
+  }
 }
 
-.post footer {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 0.875em;
-  color: var(--post__txt--5);
-}
-
-.post footer span {
-  font-style: italic;
+@keyframes fancy-in {
+  /* card entry */
+  0% {
+    transform: translateY(25vh);
+  }
+  /* card on stage */
+  20%, 80% {
+    opacity: 1;
+    transform: none;
+  }
+  /* card exit */
+  100% {
+    transform: translateY(90%) scale(.98);
+    opacity: 0;
+  }
 }

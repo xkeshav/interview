@@ -5,12 +5,11 @@ export type Post = {
     body: string;
 };
 
-const PAGE_SIZE = 10;
 
-export async function fetchPosts(pageNo: number): Promise<Post[]> {
+export async function fetchPosts(pageNo: number, pageSize = 10): Promise<Post[]> {
     const url = new URL("https://jsonplaceholder.typicode.com/posts");
     url.searchParams.append("_page", pageNo.toString());
-    url.searchParams.append("_limit", PAGE_SIZE.toString());
+    url.searchParams.append("_limit", pageSize.toString());
     const res = await fetch(url);
     return res.json();
 }

@@ -9,7 +9,7 @@ type PostCardProps = {
 
 function PostCard({ title, text, author }: PostCardProps) {
   return (
-    <article className="post" >
+    <article className="post scroll" >
       <h2>{title}</h2>
       <p>{text}</p>
       <footer>
@@ -22,15 +22,17 @@ function PostCard({ title, text, author }: PostCardProps) {
 export default function PostLists() {
   const [data, setData] = useState<Post[]>([] as Post[]);
   const scroller = useRef<HTMLDivElement|null>(null);
-  let isScrolled = false;
+  const [isScrolled, setIsScrolled]  = useState(false);
   const [pageNum, setPageNum] = useState(1);
+  const fetchRequestRef = useRef(true);
+  const pageNumRef = useRef(1);
 
 
   const fetchCurrentPost = async (num: number) => {
     const result = await fetchPosts(num);
     console.log({result});
     setData(data.concat(result));
-    isScrolled = false;
+    fetchRequestRef.current = true;
   };
 
   const handleScroll = (e: any) => {
@@ -38,18 +40,24 @@ export default function PostLists() {
     console.log({clientHeight, offsetHeight, scrollHeight, scrollTop});
     const totalHeight = offsetHeight + scrollTop ;
     const heightDiff = Math.abs(scrollHeight - totalHeight);
-    console.log({heightDiff})
-    if(heightDiff < 50) {
+    console.log({heightDiff});
+    document.body.style.setProperty('--scroll', heightDiff.toString() );
+    if(!isScrolled && heightDiff < 50) {
       console.log('do fetch');
       // FIX: still calling fetch call 2 3 times
-      !isScrolled && setPageNum(pageNum+1);
-      isScrolled = true;
+      if(fetchRequestRef.current) fetchRequestRef.current = false;
+      setPageNum(pageNum+1);
+      //setIsScrolled(true);
     }
-    
+    setIsScrolled(false);
+    // Adding timeout doesn't work
+    //setTimeout(() => {
+    //  setIsScrolled(false);
+    //}, 1);
   }
 
   useEffect(()=>{
-    scroller?.current?.addEventListener("scroll", handleScroll);
+    scroller?.current?.addEventListener("scroll", handleScroll, false);
     fetchCurrentPost(pageNum);
     return () =>  scroller?.current?.removeEventListener("scroll", handleScroll);
   }, [pageNum])

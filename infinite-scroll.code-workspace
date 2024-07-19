@@ -1,36 +1,34 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"workbench.colorCustomizations": {
-			"activityBar.activeBackground": "#effbfd",
-			"activityBar.background": "#effbfd",
-			"activityBar.foreground": "#15202b",
-			"activityBar.inactiveForeground": "#15202b99",
-			"activityBarBadge.background": "#f18ee3",
-			"activityBarBadge.foreground": "#15202b",
-			"commandCenter.border": "#15202b99",
-			"sash.hoverBorder": "#effbfd",
-			"sideBar.border": "#effbfd",
-			"statusBar.background": "#c0eff9",
-			"statusBar.foreground": "#15202b",
-			"statusBarItem.hoverBackground": "#91e3f5",
-			"statusBarItem.remoteBackground": "#c0eff9",
-			"statusBarItem.remoteForeground": "#15202b",
-			"tab.activeBorder": "#effbfd",
-			"titleBar.activeBackground": "#c0eff9",
-			"titleBar.activeForeground": "#15202b",
-			"titleBar.inactiveBackground": "#c0eff999",
-			"titleBar.inactiveForeground": "#15202b99"
-		},
-		"peacock.color": "#c0eff9",
-		"cSpell.words": [
-			"Aman",
-			"Jagdev",
-			"Kumar"
-		]
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#567905",
+      "activityBar.background": "#567905",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#0aaef5",
+      "activityBarBadge.foreground": "#15202b",
+      "commandCenter.border": "#e7e7e799",
+      "sash.hoverBorder": "#567905",
+      "statusBar.background": "#334803",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#567905",
+      "statusBarItem.remoteBackground": "#334803",
+      "statusBarItem.remoteForeground": "#e7e7e7",
+      "titleBar.activeBackground": "#334803",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#33480399",
+      "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "334803",
+    "cSpell.words": [
+      "Aman",
+      "Jagdev",
+      "Kumar"
+    ]
+  }
 }
