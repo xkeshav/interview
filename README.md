@@ -1,11 +1,14 @@
 # Interview Question
 
-Company: Atlassian
+Company: Atlassian India
 
-## Browser Coding round
+Below are just for my own reference and completed somewhat even after interview completion
 
-Date: Aug 24, 2023
-Duration: 1 hour
+## First Round
+
+| Date            | Duration | Name                 |
+| :-------------- | :------: | :------------------- |
+| August 24, 2023 |  1 Hour  | Browser Coding Round |
 
 Question: develop below page in any framework/vanilla using the data coming from **page-data.js**
 
@@ -51,5 +54,16 @@ function fetchData() {
 }
 ```
 
-![Page Tree](PageTree.png)
+![Page Tree](./src/PageTree.png)
 
+---
+
+## Second Round
+
+| Date            | Duration |                    Name |
+| :-------------- | :------: | ----------------------: |
+| August 31, 2023 |  1 Hour  | JavaScript Coding Round |
+
+Question: asked to create a production ready method for getting feature flag by sending feature flag name, this was basically more on async await related question.
+
+solution is on [_src/feature-flag.js_](src/feature-flag.js) file

@@ -28,5 +28,10 @@
 			"tab.activeBorder": "#2464a8"
 		},
 		"peacock.color": "#1b4b7e"
+	},
+	"extensions": {
+		"recommendations": [
+			"yzhang.markdown-all-in-one"
+		]
 	}
 }
