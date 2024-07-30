@@ -1,38 +1,63 @@
-function TaskRunner(l) {
-    const limit = l;
-    const taskQueue = {};
-    const runningTask = 0;
-    const currentRunningTaskList = [];
+/* 
+  Question: Create a task runner which run a number of task as a given time; we can pass the limit while initialize  
+  Company: AngelOne (Round 2)
+*/
+class TaskRunner {
+  #limit;
+  #taskQueue = [];
+  #taskCount = 0;
+  #taskList = []; // if we want to track total task
 
-    function run(fn, id) {
-      currentRunningTaskList.push({[id]: fn});
-      if(currentRunningTaskList.length > limit) {
-        console.log('wait');
-      } else {
-        runningTask++;
-        (async (args)=>{
-          const done = await fn(args);
-          done.then(()=>{
-            const idx = currentRunningTaskList.findIndex( task => task === id );
-            currentRunningTaskList.splice(0, idx);
-            currentRunningTaskList.push(fn);
-            run(fn.id)
-          })
-        });
-      }
+  constructor(limit) {
+    this.#limit = limit;
+  }
+
+  #runTask() {
+    if (this.#taskQueue.length === 0) {
+      console.log(`No tasks left in the queue. ${this.#taskCount} running. Nothing will run next.`)
+      console.log(this.#taskList);
+      return;
     }
+    if (this.#taskCount >= this.#limit) {
+      console.log(`Reached limit of running tasks ${this.#limit}. No new task will run until one finishes.`)
+      return;
+    }
+
+    const {task, id} = this.#taskQueue.shift();
+    this.#taskCount++;
+
+    task(id).then((res)=>{
+      console.log(res);
+    }
+    ).finally(()=>{
+      this.#taskCount--;
+      this.#taskList.push( {task , id, isCompleted: true});
+      this.#runTask();
+    }
+    )
+  }
+
+  run(fn, id) {
+    this.#taskQueue.push({ task: fn,id: id});
+    this.#runTask();
+  }
 }
 
 const taskRunner = new TaskRunner(3);
 
-const task = (arg) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      console.log("Task Completed!!!", arg);
+const task = (arg)=>{
+  //1-4 seconds delay
+  const randomDelay = Math.floor(Math.random() * 3000) + 1000;
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      console.log("Task Completed!", arg);
       resolve(true);
-    }, 2000)
-  })
-};
+    }
+    , randomDelay)
+  }
+  )
+}
+;
 
 taskRunner.run(task, 'id-1');
 taskRunner.run(task, 'id-2');
