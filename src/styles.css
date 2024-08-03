@@ -75,30 +75,26 @@
       /* animation-play-state: paused; */
       /* animation-delay: calc(var(--scroll) * -1s); */
     }
-    .scroll-y{
-      /* animation: fancy-in linear both; */
-      /* animation-timeline: view(x); */
-      /* animation-timeline: scroll(y); */
-    }
 }
 
 @keyframes up {
   from {
-    background-color: green;
-    font-size: large;
+    background-color: #9a1c1c;
+    font-size: small;
+    color: #90a543;
   }
 
   to {
     background-color: black;
     color: white;
-    font-size: small;
+    font-size: large;
   }
 }
 
 @keyframes fancy-in {
   /* card entry */
   0% {
-    transform: translateY(25vh);
+    transform: translateY(35vh);
   }
   /* card on stage */
   20%, 80% {

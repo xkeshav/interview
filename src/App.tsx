@@ -1,10 +1,10 @@
-import PostLists from "./PostsList";
+import {PostList} from "./PostList";
 import "./styles.css";
 
 export default function App() {
   return (
     <div className="App">
-      <PostLists />
+      <PostList />
     </div>
   );
 }
