@@ -22,7 +22,9 @@
       "titleBar.activeBackground": "#334803",
       "titleBar.activeForeground": "#e7e7e7",
       "titleBar.inactiveBackground": "#33480399",
-      "titleBar.inactiveForeground": "#e7e7e799"
+      "titleBar.inactiveForeground": "#e7e7e799",
+      "sideBar.border": "#567905",
+      "tab.activeBorder": "#567905"
     },
     "peacock.color": "334803",
     "cSpell.words": [

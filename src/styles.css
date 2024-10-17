@@ -31,8 +31,6 @@
   overflow-x: hidden;
 }
 
-
-
 .post {
   background: var(--post__bg--2);
   border: 1px solid var(--post__border--3);
@@ -64,43 +62,46 @@
   }
 }
 
-
 @supports (animation-timeline: scroll()) {
-    .scroll {
-      animation: up linear both;
-      /* animation-timeline: scroll(root block); */
-      animation-timeline: view();
-      /* animation-range: contain; */
-      animation-range: 25vh 75vh;
-      /* animation-play-state: paused; */
-      /* animation-delay: calc(var(--scroll) * -1s); */
-    }
+  .scroll {
+    animation: up linear both;
+    /* animation-timeline: scroll(root block); */
+    animation-timeline: view();
+    /* animation-range: contain; */
+    animation-range: 25vh 75vh;
+    /* animation-play-state: paused; */
+    /* animation-delay: calc(var(--scroll) * -1s); */
+  }
 }
 
 @keyframes up {
   from {
-    background-color: #9a1c1c;
-    font-size: small;
-    color: #90a543;
+    background-color: #969a1c;
+    /* font-size: small; */
+    /* color: #90a543; */
   }
 
   to {
-    background-color: black;
-    color: white;
-    font-size: large;
+    background-color: rgb(95, 235, 52);
+    /* color: white; */
+    /* font-size: large; */
   }
 }
 
 @keyframes fancy-in {
+
   /* card entry */
   0% {
     transform: translateY(35vh);
   }
+
   /* card on stage */
-  20%, 80% {
+  20%,
+  80% {
     opacity: 1;
     transform: none;
   }
+
   /* card exit */
   100% {
     transform: translateY(90%) scale(.98);

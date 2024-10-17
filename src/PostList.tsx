@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { fetchPosts, Post } from './services/api';
+import { fetchChars, fetchPosts, Post } from './services/api';
 
 type PostCardProps = {
   title: string;
@@ -43,7 +43,7 @@ const PostList = () => {
 
     const fetchCurrentPost = async (num: number) => {
       try {
-        const result = await fetchPosts(num);
+        const result = await fetchChars(num);
         console.log({ result });
         setData(data.concat(result));
         setIsScrolled(false);
@@ -56,14 +56,15 @@ const PostList = () => {
       }
     };
 
-    const handleScroll = (e: any) =>  {
-      const { offsetHeight, scrollHeight, scrollTop } = e.target;
+    const handleScroll = (e: Event) =>  {
+      const { offsetHeight, scrollHeight, scrollTop } = e.target as HTMLDivElement;
+      console.log({ offsetHeight, scrollHeight, scrollTop });
+
       const totalHeight = offsetHeight + scrollTop;
       const heightDiff = Math.abs(scrollHeight - totalHeight);
-      console.log({heightDiff,isScrolled});
+      console.log({offsetHeight, heightDiff, isScrolled});
       document.body.style.setProperty('--scroll', heightDiff.toString());
       if (heightDiff <= MIN_HEIGHT && !isScrolled) {
-        setIsScrolled(true);
         setPageNum(pageNum + 1);
       }
     };
@@ -71,7 +72,7 @@ const PostList = () => {
     useEffect(() => {
       scroller?.current?.addEventListener("scroll", handleScroll, false);
       fetchCurrentPost(pageNum);
-      setIsScrolled(false);
+      setIsScrolled(true);
       return () => scroller?.current?.removeEventListener("scroll", handleScroll);
     }, [pageNum])
 
