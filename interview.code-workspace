@@ -17,7 +17,9 @@
 			"titleBar.activeBackground": "#8e4512",
 			"titleBar.activeForeground": "#e7e7e7",
 			"titleBar.inactiveBackground": "#8e451299",
-			"titleBar.inactiveForeground": "#e7e7e799"
+			"titleBar.inactiveForeground": "#e7e7e799",
+			"sideBar.border": "#bb5b18",
+			"tab.activeBorder": "#bb5b18"
 		},
 		"peacock.color": "#8e4512",
 		"workbench.editor.customLabels.patterns": {

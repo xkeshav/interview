@@ -22,6 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+.env
+
 # Runtime data
 pids
 *.pid
@@ -113,6 +115,7 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+**/.DS_STORE
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
