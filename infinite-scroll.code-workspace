@@ -1,36 +1,26 @@
 {
-  "folders": [
-    {
-      "path": "."
-    }
-  ],
   "settings": {
     "workbench.colorCustomizations": {
-      "activityBar.activeBackground": "#567905",
-      "activityBar.background": "#567905",
-      "activityBar.foreground": "#e7e7e7",
-      "activityBar.inactiveForeground": "#e7e7e799",
-      "activityBarBadge.background": "#0aaef5",
-      "activityBarBadge.foreground": "#15202b",
-      "commandCenter.border": "#e7e7e799",
-      "sash.hoverBorder": "#567905",
-      "statusBar.background": "#334803",
-      "statusBar.foreground": "#e7e7e7",
-      "statusBarItem.hoverBackground": "#567905",
-      "statusBarItem.remoteBackground": "#334803",
-      "statusBarItem.remoteForeground": "#e7e7e7",
-      "titleBar.activeBackground": "#334803",
-      "titleBar.activeForeground": "#e7e7e7",
-      "titleBar.inactiveBackground": "#33480399",
-      "titleBar.inactiveForeground": "#e7e7e799",
-      "sideBar.border": "#567905",
-      "tab.activeBorder": "#567905"
+      "activityBar.activeBackground": "#6ebaad",
+      "activityBar.background": "#6ebaad",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#9d52ad",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "commandCenter.border": "#15202b99",
+      "sash.hoverBorder": "#6ebaad",
+      "sideBar.border": "#6ebaad",
+      "statusBar.background": "#4fa697",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#3f8378",
+      "statusBarItem.remoteBackground": "#4fa697",
+      "statusBarItem.remoteForeground": "#15202b",
+      "tab.activeBorder": "#6ebaad",
+      "titleBar.activeBackground": "#4fa697",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#4fa69799",
+      "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "334803",
-    "cSpell.words": [
-      "Aman",
-      "Jagdev",
-      "Kumar"
-    ]
+    "peacock.color": "#4fa697"
   }
 }

@@ -11,10 +11,15 @@
     "intersection-observer",
     "scrolling animation"
   ],
-  "author": {"name": "Keshav Mohta", "email": "xkeshav@gmail.com"},
+  "author": {
+    "name": "Keshav Mohta", 
+    "email": "xkeshav@gmail.com"
+  },
   "homepage": "checking xkeshav@gmail.com",
   "main": "src/index.tsx",
-  "contributors": [ {"name": "Keshav Mohta"}, {"name": "Aman Kumar Jagdev"}],
+  "contributors": [ 
+    {"name": "Keshav Mohta"} 
+  ],
   "dependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1"
