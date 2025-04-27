@@ -1,9 +1,8 @@
-# Infinite Scrolling
+# Box Color and un color in same order
 
 ## Task
 
-There ia react page which load Posts via fetch call and when user reach on bottom of page then load 10 more content and so on.
-Implement infinite scrolling
+create a m block list where user click on block and its color changed and when all block color done then it will change color back in same order it was clicked.
 
 ## Tech Stack
 
@@ -13,8 +12,6 @@ Implement infinite scrolling
 
 ## Additional technical hint
 
-- using  `throttling` or `debounce`
+- using `useRef`
 
-- Intersection observer method
-
-- CSS Scroll Animation is bonus
+### Asked in RingCentral 1st round of interview.
