@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
-import { fetchChars, fetchPosts, Post } from './services/api';
+import { fetchPosts, Post } from './services/api';
 
 type PostCardProps = {
   title: string;
   text: string;
   author: number;
-}
+};
 
 const MIN_HEIGHT = 200;
 
 function PostCard({ title, text, author }: PostCardProps) {
   return (
-    <article className="post scroll" >
+    <article className="post scroll">
       <h2>{title}</h2>
       <p>{text}</p>
       <footer>
@@ -21,66 +21,65 @@ function PostCard({ title, text, author }: PostCardProps) {
   );
 }
 
-const doThrottle = (fn: any, wait = 3000) => {
-  let isWaiting = false;
-  return (...args: any) => {
-    if (!isWaiting) {
-      fn(args);
-      isWaiting = true;
-      setTimeout(() => {
-        console.log('setTimeout called', { args }, new Date());
-        isWaiting = false;
-      }, wait);
+const PostList = () => {
+  const [data, setData] = useState<Post[]>([] as Post[]);
+  const scroller = useRef<HTMLDivElement | null>(null);
+  const [pageNum, setPageNum] = useState(1);
+  const isScrolledRef = useRef(false); // Use ref to track scrolling state
+
+  const fetchCurrentPost = async (num: number) => {
+    try {
+      const result = await fetchPosts(num);
+      console.log({ result });
+      setData((prevData) => prevData.concat(result));
+    } catch (e: unknown) {
+      console.log('error while fetching ==>', (e as Error).message);
+    } finally {
+      console.log('inside finally');
+      isScrolledRef.current = false; // Reset scrolling state
     }
   };
-}
 
-const PostList = () => {
-    const [data, setData] = useState<Post[]>([] as Post[]);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const scroller = useRef<HTMLDivElement | null>(null);
-    const [pageNum, setPageNum] = useState(1);
+  const handleScroll = () => {
+    if (!scroller.current) return;
 
-    const fetchCurrentPost = async (num: number) => {
-      try {
-        const result = await fetchChars(num);
-        console.log({ result });
-        setData(data.concat(result));
-        setIsScrolled(false);
-      } catch (e: unknown) {
-        console.log('error while fetching ==>', (e as Error).message)
-      }
-      finally {
-        console.log('inside finally');
-        setIsScrolled(false);
-      }
-    };
+    const { offsetHeight, scrollHeight, scrollTop } = scroller.current;
+    const totalHeight = offsetHeight + scrollTop;
+    const heightDiff = Math.abs(scrollHeight - totalHeight);
 
-    const handleScroll = (e: Event) =>  {
-      const { offsetHeight, scrollHeight, scrollTop } = e.target as HTMLDivElement;
-      console.log({ offsetHeight, scrollHeight, scrollTop });
+    console.log(`%c ${isScrolledRef.current}`, 'font-size:1rem;color:yellow');
+    document.body.style.setProperty('--scroll', heightDiff.toString());
 
-      const totalHeight = offsetHeight + scrollTop;
-      const heightDiff = Math.abs(scrollHeight - totalHeight);
-      console.log({offsetHeight, heightDiff, isScrolled});
-      document.body.style.setProperty('--scroll', heightDiff.toString());
-      if (heightDiff <= MIN_HEIGHT && !isScrolled) {
-        setPageNum(pageNum + 1);
+    if (heightDiff <= MIN_HEIGHT && !isScrolledRef.current) {
+      isScrolledRef.current = true; // Prevent multiple triggers
+      setPageNum((prevPageNum) => prevPageNum + 1);
+    }
+  };
+
+  useEffect(() => {
+    const currentScroller = scroller.current;
+    if (currentScroller) {
+      currentScroller.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      if (currentScroller) {
+        currentScroller.removeEventListener('scroll', handleScroll);
       }
     };
+  }, []); // Attach the scroll listener only once
 
-    useEffect(() => {
-      scroller?.current?.addEventListener("scroll", handleScroll, false);
-      fetchCurrentPost(pageNum);
-      setIsScrolled(true);
-      return () => scroller?.current?.removeEventListener("scroll", handleScroll);
-    }, [pageNum])
+  useEffect(() => {
+    fetchCurrentPost(pageNum);
+  }, [pageNum]); // Fetch posts when pageNum changes
 
-    return (
-      <div className="post-list" ref={scroller} >
-        {data.map((d, i) => <PostCard key={i} title={d.title} text={d.body} author={d.userId} />)}
-      </div>
-    );
-  }
+  return (
+    <div id="posts" className="post-list" ref={scroller}>
+      {data.map((d, i) => (
+        <PostCard key={i} title={d.title} text={d.body} author={d.userId} />
+      ))}
+    </div>
+  );
+};
 
-  export { PostList }
+export { PostList };
