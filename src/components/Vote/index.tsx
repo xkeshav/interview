@@ -10,6 +10,7 @@ interface VoteProps {
 const Vote: React.FC<VoteProps> = ({ options, onVote, viewWinner }) => {
 
   const handleOnVote = (v: PollOption) => {
+    console.log({v})
     onVote(v.id);
   }
 
@@ -20,10 +21,11 @@ const Vote: React.FC<VoteProps> = ({ options, onVote, viewWinner }) => {
           <section className="layout-row align-items-center justify-content-center mr-10 ml-10 pr-10 pl-10">
             <h3 data-testid={`choice-${v.id}`}>{v.text}</h3>
           </section>
-          <section className="layout-row align-items-center justify-content-center mr-10 ml-10 mb-10 pr-10 pl-10">
+          <section className="layout-column align-items-center justify-content-center mr-10 ml-10 mb-10 pr-10 pl-10">
             <button onClick={()=>handleOnVote(v)} disabled={viewWinner} data-testid={`vote-button-${v.id}`}>
               Vote
             </button>
+            <div>{v.votes}</div>
           </section>
         </div>)
         )}

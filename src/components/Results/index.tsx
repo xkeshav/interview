@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Poll } from '../../types/Poll';
 
 interface ResultsProps {
@@ -18,13 +18,13 @@ const Results: React.FC<ResultsProps> = ({ poll, viewWinner, setViewWinner, tota
     //checkPoll();
   }
 
-  const checkPoll = () => {
+  const checkPoll = useCallback(() => {
     if(options[0].votes === options[1].votes) {
-      setResultNote("It's a tie")
+      setResultNote("It's a tie.")
     } else {
-      setResultNote(`${options[1].text} ${!viewWinner? 'is leading': 'won'} by ${options[1].votes - options[0].votes } vote(s)`)
+      setResultNote(`${options[1].text} ${!viewWinner? 'is leading': 'won'} by ${options[1].votes - options[0].votes } vote(s).`)
     }
-  };
+  },[options, viewWinner]);
 
 
   useEffect(()=>{

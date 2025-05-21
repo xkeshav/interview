@@ -1,0 +1,7 @@
+h1 {
+  justify-content: center;
+  display: flex;
+  background-color: aliceblue;
+  margin: 0;
+  padding: 1rem;
+}

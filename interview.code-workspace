@@ -26,7 +26,12 @@
 			"**/src/components/**/index.tsx": "${dirname}",
 		},
 		"workbench.editor.labelFormat": "short",
-		"files.autoSave": "afterDelay"
+		"files.autoSave": "afterDelay",
+		"editor.defaultFormatter": null,
+		"editor.formatOnSave": true,
+		"[markdown]": {
+			"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+		}
 	},
 	"folders": [
 		{
