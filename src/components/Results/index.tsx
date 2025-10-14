@@ -15,7 +15,6 @@ const Results: React.FC<ResultsProps> = ({ poll, viewWinner, setViewWinner, tota
 
   const handleWinnerClick = () => {
     setViewWinner(!viewWinner);
-    //checkPoll();
   }
 
   const checkPoll = useCallback(() => {
