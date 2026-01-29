@@ -12,15 +12,18 @@
     "scrolling animation"
   ],
   "author": {
-    "name": "Keshav Mohta", 
+    "name": "Keshav Mohta",
     "email": "xkeshav@gmail.com"
   },
   "homepage": "checking xkeshav@gmail.com",
   "main": "src/index.tsx",
-  "contributors": [ 
-    {"name": "Keshav Mohta"} 
+  "contributors": [
+    {
+      "name": "Keshav Mohta"
+    }
   ],
   "dependencies": {
+    "bulma": "^1.0.4",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
@@ -31,7 +34,6 @@
     "typescript": "4.4.4",
     "vite": "^5.0.11"
   },
-  
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

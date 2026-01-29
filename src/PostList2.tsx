@@ -21,6 +21,19 @@ function PostCard({ title, text, author }: PostCardProps) {
   );
 }
 
+const throttle = <T extends (...args: any[]) => void>(fn: T, delay: number) => {
+  let lastCall = 0;
+
+  return (...args: Parameters<T>) => {
+    const now = Date.now();
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      fn(...args);
+    }
+  };
+}
+
+
 const PostList = () => {
   const [data, setData] = useState<Post[]>([] as Post[]);
   const scroller = useRef<HTMLDivElement | null>(null);
@@ -30,10 +43,12 @@ const PostList = () => {
   const fetchCurrentPost = async (num: number) => {
     try {
       const result = await fetchPosts(num);
+      console.log({ result });
       setData((prevData) => prevData.concat(result));
     } catch (e: unknown) {
       console.log('error while fetching ==>', (e as Error).message);
     } finally {
+      console.log('inside finally');
       isScrolledRef.current = false; // Reset scrolling state
     }
   };
@@ -47,23 +62,24 @@ const PostList = () => {
     const heightDiff = Math.abs(scrollHeight - totalHeight);
 
     console.log(`%c ${isScrolledRef.current}`, 'font-size:1rem;color:yellow');
-    // document.body.style.setProperty('--scroll', heightDiff.toString());
+    document.body.style.setProperty('--scroll', heightDiff.toString());
 
     if (heightDiff <= MIN_HEIGHT && !isScrolledRef.current) {
       isScrolledRef.current = true; // Prevent multiple triggers
-      setPageNum((pn) => pn + 1);
+      setPageNum((prevPageNum) => prevPageNum + 1);
     }
   };
 
   useEffect(() => {
     const currentScroller = scroller.current;
+    const throttledScroll = throttle(handleScroll, 150);
     if (currentScroller) {
-      currentScroller.addEventListener('scroll', handleScroll);
+      currentScroller.addEventListener('scroll', throttledScroll);
     }
 
     return () => {
       if (currentScroller) {
-        currentScroller.removeEventListener('scroll', handleScroll);
+        currentScroller.removeEventListener('scroll', throttledScroll);
       }
     };
   }, []); // Attach the scroll listener only once

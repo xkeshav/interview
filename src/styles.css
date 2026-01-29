@@ -7,6 +7,8 @@
   --post__txt--5: #555;
 }
 
+
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -17,6 +19,12 @@
   align-items: center;
   padding: 16px;
   scroll-timeline: --squareTimeline y;
+}
+
+.box {
+  display: grid;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .post-list {
